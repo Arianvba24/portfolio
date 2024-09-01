@@ -8,6 +8,11 @@
 
         <!-- =====BOX ICONS===== -->
         <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    
+        <!-- SweetAlert2 JS -->
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
         <title>Portfolio website complete</title>
     </head>
@@ -58,7 +63,7 @@
                         </mask>
                         <g mask="url(#mask0)">
                             <path d="M9.19024 145.964C34.0253 76.5814 114.865 54.7299 184.111 29.4823C245.804 6.98884 311.86 -14.9503 370.735 14.143C431.207 44.026 467.948 107.508 477.191 174.311C485.897 237.229 454.931 294.377 416.506 344.954C373.74 401.245 326.068 462.801 255.442 466.189C179.416 469.835 111.552 422.137 65.1576 361.805C17.4835 299.81 -17.1617 219.583 9.19024 145.964Z"/>
-                            <image class="home__blob-img" x="50" y="60" href="assets/img/fotos.png"/>
+                            <image class="home__blob-img" x="50" y="60" href="assets/img/xxp.png"/>
                         </g>
                     </svg>
                 </div>
@@ -70,7 +75,7 @@
 
                 <div class="about__container bd-grid">
                     <div class="about__img">
-                        <img src="assets/img/fotos.png" alt="">
+                        <img src="assets/img/portada.jpeg" alt="">
                     </div>
                     
                     <div>
@@ -152,28 +157,28 @@
                 <h2 class="section-title">Work</h2>
 
                 <div class="work__container bd-grid">
-                    <a href="" class="work__img">
+                    <a href="https://github.com/Arianvba24/logistic_app" target="_blank" class="work__img">
                         <img src="assets/img/x.jpg" alt="">
                         <!-- Comida -->
                         Logistic Web application
                     </a>
-                    <a href="" class="work__img">
+                    <a href="https://github.com/Arianvba24/Web-Scrapping-Parfoi-Store" target="_blank" class="work__img">
                         <img src="assets/img/millions of rows.png" alt="">
                         Analysing 55 million rows in Python
                     </a>
-                    <a href="" class="work__img">
+                    <a href="https://github.com/Arianvba24/Web-Scrapping-Parfoi-Store" target="_blank" class="work__img">
                         <img src="assets/img/web scrapping parfoiç.png" alt="">
                         Web Scrapping parfoiç spanish store
                     </a>
-                    <a href="" class="work__img">
+                    <a href="https://github.com/Arianvba24/Dashboard-clothing-store" target="_blank" class="work__img">
                         <img src="assets/img/analisis datos power bi.png" alt="">
                         Data Analysis in Power BI
                     </a>
-                    <a href="" class="work__img">
+                    <a href="https://github.com/Arianvba24/Highlight-words-regarding-whether-or-not-they-are-in-excel-file" target="_blank" class="work__img">
                         <img src="assets/img/outlook automation.png" alt="">
                         Outlook Automation
                     </a>
-                    <a href="" class="work__img">
+                    <a href="https://github.com/Arianvba24/Software-web-scrapping-real-state-marketplace" target="_blank" class="work__img">
                         <img src="assets/img/real state vba.png" alt="">
                         Web scrapping Real State Marketplace in VBA with Excel
                     </a>
@@ -185,12 +190,50 @@
                 <h2 class="section-title">Contact</h2>
 
                 <div class="contact__container bd-grid">
-                    <form action="" class="contact__form">
-                        <input type="text" placeholder="Name" class="contact__input">
-                        <input type="mail" placeholder="Email" class="contact__input">
-                        <textarea name="" id="" cols="0" rows="10" class="contact__input"></textarea>
-                        <input type="button" value="Enviar" class="contact__button button">
+                    <form id="contact-form" action="https://formsubmit.co/datalovervba24@gmail.com" class="contact__form" method="POST">
+                    <!-- <form action="send_email.php" class="contact__form"> -->
+                        <input type="hidden" name="_captcha" value="false" required>
+                        <input type="text" name ="name" placeholder="Name" class="contact__input"required>
+                        <input type="mail" name="mail" placeholder="Email" class="contact__input"required>
+                        <textarea name ="text" id="" cols="0" rows="10" class="contact__input" required></textarea>
+                        <input type="submit" value="Enviar" class="contact__button button">
                     </form>
+                    <script>
+                        $(document).ready(function() {
+                            $('#contact-form').on('submit', function(event) {
+                                event.preventDefault(); // Previene el envío normal del formulario
+                    
+                                // Recoge los datos del formulario
+                                var formData = $(this).serialize();
+                    
+                                // Envía los datos usando AJAX
+                                $.ajax({
+                                    url: "https://formsubmit.co/ajax/datalovervba24@gmail.com", // Reemplaza con tu correo
+                                    method: "POST",
+                                    data: formData,
+                                    dataType: "json",
+                                    success: function(response) {
+                                        Swal.fire({
+                                            icon: 'success',
+                                            title: '¡Correo enviado!',
+                                            text: 'Su mensaje ha sido enviado exitosamente.',
+                                            confirmButtonText: 'Aceptar'
+                                        });
+                    
+                                        $('#contact-form')[0].reset(); // Opcional: limpiar el formulario
+                                    },
+                                    error: function(xhr, status, error) {
+                                        Swal.fire({
+                                            icon: 'error',
+                                            title: 'Error',
+                                            text: 'Hubo un problema al enviar tu mensaje. Inténtalo de nuevo más tarde.',
+                                            confirmButtonText: 'Aceptar'
+                                        });
+                                    }
+                                });
+                            });
+                        });
+                    </script>
                 </div>
             </section>
         </main>

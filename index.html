@@ -231,9 +231,9 @@
                                     success: function(response) {
                                         Swal.fire({
                                             icon: 'success',
-                                            title: '¡Correo enviado!',
-                                            text: 'Su mensaje ha sido enviado exitosamente.',
-                                            confirmButtonText: 'Aceptar'
+                                            title: 'Email send!',
+                                            text: 'Your message has been send succesfully.',
+                                            confirmButtonText: 'Accept'
                                         });
                     
                                         $('#contact-form')[0].reset();
@@ -243,8 +243,8 @@
                                         Swal.fire({
                                             icon: 'error',
                                             title: 'Error',
-                                            text: 'Hubo un problema al enviar tu mensaje. Inténtalo de nuevo más tarde.',
-                                            confirmButtonText: 'Aceptar'
+                                            text: 'There was a problem sending your message. Try again later.',
+                                            confirmButtonText: 'Accept'
                                         });
                                         $('.loading-container').hide();
                                     }

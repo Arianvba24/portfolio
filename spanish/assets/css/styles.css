@@ -197,10 +197,9 @@ img {
 }
 .new-font {
   font-size: var(--other-font-size);
-  /* margin-top: 500px; */
+  /* margin-top: 100; */
   margin-bottom: var(--mb-3);
   position: relative;
-  /* padding-top: var(--mb-3); */
  
 
 
@@ -271,6 +270,10 @@ img {
   row-gap: 2rem;
   text-align: center;
 }
+.skills__container2 {
+  row-gap: 2rem;
+  text-align: center;
+}
 .skills__subtitle {
   margin-bottom: var(--mb-2);
 }
@@ -315,10 +318,10 @@ img {
   width: 70%;
 }
 .skills__js {
-  width: 70%;
+  width: 95%;
 }
 .skills__ux {
-  width: 85%;
+  width: 60%;
 }
 .skills__img {
   border-radius: 0.5rem;
@@ -378,9 +381,9 @@ img {
   display: flex;
   margin-left: 8px;
   color: black;
-  /* border-bottom: 2px solid rgb(58, 99, 175);
+  /* border-bottom: 2px solid rgb(58, 99, 175); */
   padding-top: 8px;
-  padding-bottom: 6px; */
+  padding-bottom: 6px;
 
   /* color: var(--second-color); */
   
@@ -390,13 +393,14 @@ img {
 
 
 
+
 .spanish{
   display: flex;
   margin-left: 5px;
   color: black;
   border-bottom: 2px solid rgb(58, 99, 175);
-  padding-top: 8px;
-  padding-bottom: 6px;
+  padding-top: 8px; 
+  padding-bottom: 6px; 
 
 
 }
@@ -516,6 +520,11 @@ color: #333;
     justify-content: center;
     column-gap: 1rem;
   }
+  .skills__container2 {
+    grid-template-columns: 0.7fr;
+    justify-content: center;
+    column-gap: 1rem;
+  }
   .work__container {
     grid-template-columns: repeat(2, 1fr);
     column-gap: 2rem;
@@ -574,11 +583,18 @@ color: #333;
   .about__img img {
     width: 300px;
   }
-  .skills__container {
+   .skills__container {
     grid-template-columns: repeat(2, 1fr);
     column-gap: 2rem;
     align-items: center;
     text-align: initial;
+  }
+  .skills__container2 {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
+    align-items: center;
+    text-align: initial;
+    margin-top: 3em;
   }
   .work__container {
     grid-template-columns: repeat(3, 1fr);
@@ -597,3 +613,81 @@ color: #333;
     width: 450px;
   }
 }
+
+
+/* ------------------------------------------------------------------------------------------------------------ */
+.skills__title-general {
+    /* color: white; */
+    font-size: 2.2rem;
+    font-weight: bold;
+    text-align: left;      
+    margin-bottom: 20px;   
+}
+
+/* Contenedor de columnas */
+.skills__columns {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;        /* responsive */
+    align-items: flex-start;
+}
+
+/* Cada columna */
+.skills__column {
+    flex: 1;
+    min-width: 220px;
+}
+
+/* Cada skill */
+.skills__data2 {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+/* Tick delante del skill */
+.skills__name2::before {
+    content: "✔";
+    color: green;
+    margin-right: 8px;
+}
+
+
+
+
+/* ------------------------------ */
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px); 
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);   
+  }
+}
+
+.skills__column {
+  opacity: 0;             
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 0.3s;  
+}
+
+.skills__title-general{
+
+  opacity: 0;             
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 0.3s;  
+  
+}
+
+.skills__data2 {
+  opacity: 0;
+  animation: fadeInUp 1s ease forwards;
+}
+
+/* Retardo progresivo para cada skill */
+.skills__data2:nth-child(1) { animation-delay: 0.5s; }
+.skills__data2:nth-child(2) { animation-delay: 0.7s; }
+.skills__data2:nth-child(3) { animation-delay: 0.9s; }

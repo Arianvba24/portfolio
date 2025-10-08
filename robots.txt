@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://arianvba24.github.io/portfolio/sitemap.xml
